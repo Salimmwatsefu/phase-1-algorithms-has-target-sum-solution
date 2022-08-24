@@ -1,11 +1,21 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seenNumbers = new Set(); // initialize an empty Set
+  for (const number of array) {
+    const complement = target - number;
+
+    // .has returns true if the Set includes the complement
+    if (seenNumbers.has(complement)) return true;
+
+    // .add adds the number to the Set
+    seenNumbers.add(number);
+  }
 }
 
 /* 
   Write the Big O time complexity of your function here
 */
-
+0(n)
 /* 
   Add your pseudocode here
 */
